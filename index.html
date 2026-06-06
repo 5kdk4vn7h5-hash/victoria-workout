@@ -7,189 +7,143 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #faf6f1;
-    --warm-white: #fff9f4;
-    --blush: #e8c4b0;
-    --terracotta: #c4724a;
-    --deep: #2d1f17;
-    --mid: #6b4c3b;
-    --light-mid: #a07860;
-    --border: #e5d4c8;
-    --card-bg: #ffffff;
-    --rest-bg: #f5ede5;
-    --phase1: #c4724a;
-    --phase2: #7a5c8a;
-    --phase3: #3a7a6a;
+    --cream:#faf6f1;--warm-white:#fff9f4;--blush:#e8c4b0;--terracotta:#c4724a;
+    --deep:#2d1f17;--mid:#6b4c3b;--light-mid:#a07860;--border:#e5d4c8;
+    --card-bg:#ffffff;--rest-bg:#f5ede5;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--cream); color: var(--deep); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);color:var(--deep);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;}
 
-  /* HERO */
-  .hero {
-    background: linear-gradient(135deg, #2d1f17 0%, #6b4c3b 55%, #c4724a 100%);
-    padding: 56px 40px 48px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 65% 25%, rgba(212,149,106,0.22) 0%, transparent 60%);
-  }
-  .hero-tag {
-    display: inline-block;
-    font-size: 10px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase;
-    color: var(--blush); margin-bottom: 14px; position: relative;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 6vw, 50px); font-weight: 400; color: #fff; line-height: 1.2; position: relative;
-  }
-  .hero h1 em { font-style: italic; color: var(--blush); }
-  .hero-sub { margin-top: 14px; color: rgba(255,255,255,0.6); font-size: 13.5px; position: relative; }
-  .pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 24px; position: relative; }
-  .pill {
-    background: rgba(255,255,255,0.11); border: 1px solid rgba(255,255,255,0.2);
-    color: rgba(255,255,255,0.82); padding: 5px 14px; border-radius: 20px; font-size: 11.5px;
-  }
+  .hero{background:linear-gradient(135deg,#2d1f17 0%,#6b4c3b 55%,#c4724a 100%);padding:56px 40px 48px;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 65% 25%,rgba(212,149,106,.22) 0%,transparent 60%);}
+  .hero-tag{display:inline-block;font-size:10px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--blush);margin-bottom:14px;position:relative;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,6vw,50px);font-weight:400;color:#fff;line-height:1.2;position:relative;}
+  .hero h1 em{font-style:italic;color:var(--blush);}
+  .hero-sub{margin-top:14px;color:rgba(255,255,255,.6);font-size:13.5px;position:relative;}
+  .pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px;position:relative;}
+  .pill{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.82);padding:5px 14px;border-radius:20px;font-size:11.5px;}
 
-  .container { max-width: 900px; margin: 0 auto; padding: 48px 20px; }
+  .container{max-width:920px;margin:0 auto;padding:48px 20px;}
+  .section-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--terracotta);font-weight:500;margin-bottom:7px;}
+  .section-title{font-family:'Playfair Display',serif;font-size:25px;font-weight:400;margin-bottom:26px;}
 
-  /* SECTION LABELS */
-  .section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); font-weight: 500; margin-bottom: 7px; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: 25px; font-weight: 400; margin-bottom: 26px; }
+  .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin-bottom:48px;}
+  .stat-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+  .stat-card .num{font-family:'Playfair Display',serif;font-size:26px;color:var(--terracotta);}
+  .stat-card .lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--light-mid);margin-top:5px;}
 
-  /* STAT GRID */
-  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); gap: 14px; margin-bottom: 48px; }
-  .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px 16px; text-align: center; }
-  .stat-card .num { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--terracotta); }
-  .stat-card .lbl { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--light-mid); margin-top: 5px; }
+  .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:48px;}
+  .phase-card{border-radius:14px;padding:22px 18px;color:white;}
+  .phase-card.p1{background:linear-gradient(135deg,#c4724a,#a05535);}
+  .phase-card.p2{background:linear-gradient(135deg,#7a5c8a,#5a3d6a);}
+  .phase-card.p3{background:linear-gradient(135deg,#3a7a6a,#1e5a4a);}
+  .phase-card .ph-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;opacity:.75;margin-bottom:6px;}
+  .phase-card h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;margin-bottom:6px;}
+  .phase-card p{font-size:12px;opacity:.85;line-height:1.5;}
+  .phase-card .wks{font-size:11px;opacity:.7;margin-top:10px;font-weight:500;letter-spacing:1px;}
 
-  /* PHASE TIMELINE */
-  .phases { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 48px; }
-  .phase-card { border-radius: 14px; padding: 22px 18px; color: white; }
-  .phase-card.p1 { background: linear-gradient(135deg, #c4724a, #a05535); }
-  .phase-card.p2 { background: linear-gradient(135deg, #7a5c8a, #5a3d6a); }
-  .phase-card.p3 { background: linear-gradient(135deg, #3a7a6a, #1e5a4a); }
-  .phase-card .ph-tag { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.75; margin-bottom: 6px; }
-  .phase-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; margin-bottom: 6px; }
-  .phase-card p { font-size: 12px; opacity: 0.85; line-height: 1.5; }
-  .phase-card .wks { font-size: 11px; opacity: 0.7; margin-top: 10px; font-weight: 500; letter-spacing: 1px; }
+  .equip-badge{display:inline-flex;align-items:center;gap:5px;background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:3px 9px;font-size:11px;color:var(--mid);margin:2px;}
+  .equip-row{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:32px;}
 
-  /* WEEK STRIP */
-  .week-strip { display: grid; grid-template-columns: repeat(5,1fr) 1fr 1fr; gap: 5px; margin-bottom: 44px; }
-  .day-chip { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 12px 6px; text-align: center; }
-  .day-chip.rest { background: var(--rest-bg); }
-  .day-chip .dn { font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--light-mid); margin-bottom: 5px; }
-  .day-chip .df { font-size: 11.5px; font-weight: 500; color: var(--deep); line-height: 1.3; }
-  .day-chip.rest .df { color: var(--light-mid); }
+  .week-strip{display:grid;grid-template-columns:repeat(5,1fr) 1fr 1fr;gap:5px;margin-bottom:44px;}
+  .day-chip{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 6px;text-align:center;}
+  .day-chip.rest{background:var(--rest-bg);}
+  .day-chip .dn{font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--light-mid);margin-bottom:5px;}
+  .day-chip .df{font-size:11.5px;font-weight:500;color:var(--deep);line-height:1.3;}
+  .day-chip.rest .df{color:var(--light-mid);}
 
-  /* PHASE TABS */
-  .phase-tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
-  .ptab {
-    padding: 8px 20px; border-radius: 22px; font-size: 12.5px; font-weight: 500; cursor: pointer;
-    border: 2px solid transparent; transition: all 0.2s;
-  }
-  .ptab.p1 { background: #f5ede5; color: var(--terracotta); border-color: #e5c4a8; }
-  .ptab.p2 { background: #f0ebf5; color: #7a5c8a; border-color: #d4bde8; }
-  .ptab.p3 { background: #e8f5f0; color: #3a7a6a; border-color: #a8d4c4; }
-  .ptab.active { color: white !important; }
-  .ptab.p1.active { background: var(--terracotta); border-color: var(--terracotta); }
-  .ptab.p2.active { background: #7a5c8a; border-color: #7a5c8a; }
-  .ptab.p3.active { background: #3a7a6a; border-color: #3a7a6a; }
+  .phase-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;}
+  .ptab{padding:8px 20px;border-radius:22px;font-size:12.5px;font-weight:500;cursor:pointer;border:2px solid transparent;transition:all .2s;}
+  .ptab.p1{background:#f5ede5;color:var(--terracotta);border-color:#e5c4a8;}
+  .ptab.p2{background:#f0ebf5;color:#7a5c8a;border-color:#d4bde8;}
+  .ptab.p3{background:#e8f5f0;color:#3a7a6a;border-color:#a8d4c4;}
+  .ptab.active{color:white!important;}
+  .ptab.p1.active{background:var(--terracotta);border-color:var(--terracotta);}
+  .ptab.p2.active{background:#7a5c8a;border-color:#7a5c8a;}
+  .ptab.p3.active{background:#3a7a6a;border-color:#3a7a6a;}
+  .phase-panel{display:none;}
+  .phase-panel.active{display:block;}
 
-  .phase-panel { display: none; }
-  .phase-panel.active { display: block; }
+  .day-card{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;margin-bottom:18px;overflow:hidden;}
+  .day-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;user-select:none;background:linear-gradient(90deg,var(--warm-white),var(--card-bg));border-bottom:1px solid transparent;transition:border-color .2s;}
+  .day-card.open .day-header{border-bottom-color:var(--border);}
+  .day-header-left{display:flex;align-items:center;gap:14px;}
+  .day-num{width:36px;height:36px;border-radius:50%;background:var(--terracotta);color:white;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:15px;flex-shrink:0;}
+  .day-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;}
+  .day-meta{font-size:12px;color:var(--light-mid);margin-top:1px;}
+  .day-badge{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;background:var(--cream);border:1px solid var(--border);color:var(--mid);padding:4px 12px;border-radius:20px;}
+  .chevron{font-size:16px;color:var(--light-mid);transition:transform .25s;margin-left:10px;}
+  .day-card.open .chevron{transform:rotate(180deg);}
+  .day-body{display:none;padding:0 22px 22px;}
+  .day-card.open .day-body{display:block;}
 
-  /* DAY CARDS */
-  .day-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 18px; overflow: hidden; }
-  .day-header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 22px; cursor: pointer; user-select: none;
-    background: linear-gradient(90deg, var(--warm-white), var(--card-bg));
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
-  }
-  .day-card.open .day-header { border-bottom-color: var(--border); }
-  .day-header-left { display: flex; align-items: center; gap: 14px; }
-  .day-num { width: 36px; height: 36px; border-radius: 50%; background: var(--terracotta); color: white; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; flex-shrink: 0; }
-  .day-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 400; }
-  .day-meta { font-size: 12px; color: var(--light-mid); margin-top: 1px; }
-  .day-badge { font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; background: var(--cream); border: 1px solid var(--border); color: var(--mid); padding: 4px 12px; border-radius: 20px; }
-  .chevron { font-size: 16px; color: var(--light-mid); transition: transform 0.25s; margin-left: 10px; }
-  .day-card.open .chevron { transform: rotate(180deg); }
-  .day-body { display: none; padding: 0 22px 22px; }
-  .day-card.open .day-body { display: block; }
+  .phase-row{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px dashed var(--border);font-size:13px;color:var(--mid);}
+  .phase-row:last-child{border-bottom:none;}
+  .pdot{width:7px;height:7px;border-radius:50%;background:var(--blush);flex-shrink:0;margin-top:6px;}
+  .pdot.t{background:var(--terracotta);}
+  .phase-row-content{flex:1;}
+  .stretch-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px;}
 
-  /* PHASE BAR */
-  .phase-bar { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px dashed var(--border); font-size: 13px; color: var(--mid); }
-  .phase-bar:last-child { border-bottom: none; }
-  .pdot { width: 7px; height: 7px; border-radius: 50%; background: var(--blush); flex-shrink: 0; }
-  .pdot.t { background: var(--terracotta); }
+  .ex-table{width:100%;border-collapse:collapse;margin:16px 0 8px;font-size:13px;}
+  .ex-table thead tr{border-bottom:2px solid var(--border);}
+  .ex-table th{text-align:left;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--light-mid);font-weight:500;padding:0 0 9px;}
+  .ex-table th:not(:first-child){text-align:center;}
+  .ex-table td{padding:10px 0;border-bottom:1px solid #f0e8e0;vertical-align:top;}
+  .ex-table tr:last-child td{border-bottom:none;}
+  .ex-table td:not(:first-child){text-align:center;color:var(--mid);font-size:12.5px;}
+  .ex-name{font-weight:500;color:var(--deep);}
+  .ex-note{font-size:11px;color:var(--light-mid);margin-top:2px;font-style:italic;}
+  .vlink{display:inline-block;margin-top:4px;font-size:11px;color:var(--terracotta);text-decoration:none;font-style:normal;font-weight:500;}
+  .vlink:hover{text-decoration:underline;}
+  .equip-tag{display:inline-block;font-size:9.5px;padding:1px 7px;border-radius:4px;font-weight:500;margin-top:3px;margin-right:3px;}
+  .eq-bb{background:#fff0e8;color:#a04020;border:1px solid #f0c4a0;}
+  .eq-cable{background:#e8f0ff;color:#304090;border:1px solid #a0b8f0;}
+  .eq-db{background:#e8f5e8;color:#206030;border:1px solid #90c090;}
 
-  /* EXERCISE TABLE */
-  .ex-table { width: 100%; border-collapse: collapse; margin: 16px 0 8px; font-size: 13px; }
-  .ex-table thead tr { border-bottom: 2px solid var(--border); }
-  .ex-table th { text-align: left; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--light-mid); font-weight: 500; padding: 0 0 9px; }
-  .ex-table th:not(:first-child) { text-align: center; }
-  .ex-table td { padding: 10px 0; border-bottom: 1px solid #f0e8e0; vertical-align: top; }
-  .ex-table tr:last-child td { border-bottom: none; }
-  .ex-table td:not(:first-child) { text-align: center; color: var(--mid); font-size: 12.5px; }
-  .ex-name { font-weight: 500; color: var(--deep); }
-  .ex-note { font-size: 11px; color: var(--light-mid); margin-top: 2px; font-style: italic; }
-  .video-link { display: inline-block; margin-top: 3px; font-size: 11px; color: var(--terracotta); text-decoration: none; font-style: normal; font-weight: 500; }
-  .video-link:hover { text-decoration: underline; }
+  .cardio-block{background:linear-gradient(135deg,var(--cream) 0%,#f5ede5 100%);border:1px solid var(--blush);border-radius:10px;padding:15px 18px;margin-top:14px;}
+  .cardio-lbl{font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:var(--terracotta);font-weight:500;margin-bottom:5px;}
+  .cardio-desc{font-size:13px;color:var(--mid);line-height:1.6;}
 
-  /* CARDIO BLOCK */
-  .cardio-block { background: linear-gradient(135deg, var(--cream) 0%, #f5ede5 100%); border: 1px solid var(--blush); border-radius: 10px; padding: 15px 18px; margin-top: 14px; }
-  .cardio-lbl { font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--terracotta); font-weight: 500; margin-bottom: 5px; }
-  .cardio-desc { font-size: 13px; color: var(--mid); line-height: 1.6; }
+  .tip-box{background:var(--warm-white);border-left:3px solid var(--terracotta);padding:12px 16px;border-radius:0 8px 8px 0;margin-top:10px;font-size:12.5px;color:var(--mid);}
 
-  /* TIP BOX */
-  .tip-box { background: var(--warm-white); border-left: 3px solid var(--terracotta); padding: 12px 16px; border-radius: 0 8px 8px 0; margin-top: 10px; font-size: 12.5px; color: var(--mid); }
+  .nut-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:14px;margin-bottom:14px;}
+  .nut-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:18px;}
+  .nut-card h4{font-family:'Playfair Display',serif;font-size:15px;font-weight:400;margin-bottom:10px;}
+  .nut-card ul{list-style:none;font-size:12.5px;color:var(--mid);}
+  .nut-card ul li{padding:4px 0;border-bottom:1px solid #f5ede5;display:flex;gap:7px;}
+  .nut-card ul li:last-child{border-bottom:none;}
+  .nut-card ul li::before{content:'–';color:var(--terracotta);flex-shrink:0;}
 
-  /* NUTRITION */
-  .nut-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px,1fr)); gap: 14px; margin-bottom: 14px; }
-  .nut-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
-  .nut-card h4 { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 400; margin-bottom: 10px; }
-  .nut-card ul { list-style: none; font-size: 12.5px; color: var(--mid); }
-  .nut-card ul li { padding: 4px 0; border-bottom: 1px solid #f5ede5; display: flex; gap: 7px; }
-  .nut-card ul li:last-child { border-bottom: none; }
-  .nut-card ul li::before { content: '–'; color: var(--terracotta); flex-shrink: 0; }
+  .prog-table{width:100%;border-collapse:collapse;font-size:12.5px;}
+  .prog-table thead tr{background:var(--deep);color:white;}
+  .prog-table th{padding:10px 14px;text-align:left;font-weight:500;font-size:11px;letter-spacing:1px;}
+  .prog-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--mid);}
+  .prog-table tr:last-child td{border-bottom:none;}
+  .prog-table tr:nth-child(even) td{background:#fdf8f4;}
+  .prog-table td:first-child{font-weight:500;color:var(--terracotta);white-space:nowrap;}
 
-  /* PROGRESSION TABLE */
-  .prog-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-  .prog-table thead tr { background: var(--deep); color: white; }
-  .prog-table th { padding: 10px 14px; text-align: left; font-weight: 500; font-size: 11px; letter-spacing: 1px; }
-  .prog-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--mid); }
-  .prog-table tr:last-child td { border-bottom: none; }
-  .prog-table tr:nth-child(even) td { background: #fdf8f4; }
-  .prog-table td:first-child { font-weight: 500; color: var(--terracotta); white-space: nowrap; }
+  footer{text-align:center;padding:36px 20px;font-size:11.5px;color:var(--light-mid);border-top:1px solid var(--border);letter-spacing:.5px;}
 
-  footer { text-align: center; padding: 36px 20px; font-size: 11.5px; color: var(--light-mid); border-top: 1px solid var(--border); letter-spacing: 0.5px; }
-
-  @media (max-width: 600px) {
-    .phases { grid-template-columns: 1fr; }
-    .week-strip { grid-template-columns: repeat(4,1fr); }
-    .hero { padding: 40px 20px 36px; }
-    .day-header { padding: 14px 16px; }
-    .day-body { padding: 0 16px 18px; }
+  @media(max-width:600px){
+    .phases{grid-template-columns:1fr;}
+    .week-strip{grid-template-columns:repeat(4,1fr);}
+    .hero{padding:40px 20px 36px;}
+    .day-header{padding:14px 16px;}
+    .day-body{padding:0 16px 18px;}
   }
 </style>
 </head>
 <body>
 
 <div class="hero">
-  <div class="hero-tag">12-Week Program · Home Dumbbells</div>
+  <div class="hero-tag">12-Week Program · Full Home Gym</div>
   <h1>Your 12-Week <em>Recomp</em> Plan</h1>
   <p class="hero-sub">Build muscle · Burn fat · Get stronger — all at once</p>
   <div class="pills">
     <span class="pill">3 Phases · 4 Weeks Each</span>
     <span class="pill">5 Days / Week</span>
-    <span class="pill">No Running</span>
-    <span class="pill">Form Videos Included</span>
+    <span class="pill">Barbell + Cable + Dumbbells</span>
+    <span class="pill">No Running · Form Videos on Everything</span>
   </div>
 </div>
 
@@ -203,31 +157,37 @@
     <div class="stat-card"><div class="num">2</div><div class="lbl">Rest Days</div></div>
   </div>
 
-  <!-- PHASE OVERVIEW -->
+  <div class="section-label">Equipment Key</div>
+  <div class="equip-row">
+    <span class="equip-badge">🏋️ <strong>BB</strong> = Barbell</span>
+    <span class="equip-badge">🔗 <strong>Cable</strong> = Pulley Cable</span>
+    <span class="equip-badge">💪 <strong>DB</strong> = Dumbbell</span>
+    <span class="equip-badge">🤸 <strong>BW</strong> = Bodyweight</span>
+  </div>
+
   <div class="section-label">Program Structure</div>
   <div class="section-title">3 phases, each building on the last</div>
   <div class="phases">
     <div class="phase-card p1">
       <div class="ph-tag">Phase 1</div>
       <h3>Foundation</h3>
-      <p>Master the movements. Build joint stability, motor patterns, and baseline strength. Lower load, higher focus on form.</p>
+      <p>Learn barbell and cable movements from scratch. Form first, load second. Dumbbell fallback on everything.</p>
       <div class="wks">Weeks 1–4</div>
     </div>
     <div class="phase-card p2">
       <div class="ph-tag">Phase 2</div>
       <h3>Build</h3>
-      <p>Add load and volume. Introduce more challenging variations. Cardio duration increases. Endurance and strength develop together.</p>
+      <p>Progressive overload on barbell lifts. Cable isolation work added. Cardio extends. Volume increases across the board.</p>
       <div class="wks">Weeks 5–8</div>
     </div>
     <div class="phase-card p3">
       <div class="ph-tag">Phase 3</div>
       <h3>Intensity</h3>
-      <p>Push the pace. Supersets, heavier loads, and full-body metabolic circuits. This is where the body really changes.</p>
+      <p>Supersets, heavier barbell loads, cable metabolic work. Full-body circuit Friday. Maximum recomp stimulus.</p>
       <div class="wks">Weeks 9–12</div>
     </div>
   </div>
 
-  <!-- WEEKLY LAYOUT -->
   <div class="section-label">Weekly Layout</div>
   <div class="section-title">Same structure across all 12 weeks</div>
   <div class="week-strip">
@@ -240,7 +200,6 @@
     <div class="day-chip rest"><div class="dn">Sun</div><div class="df">Rest</div></div>
   </div>
 
-  <!-- PHASE TABS + WORKOUTS -->
   <div class="section-label">Workouts by Phase</div>
   <div class="section-title">Tap a phase to see its workouts</div>
 
@@ -250,432 +209,870 @@
     <div class="ptab p3" onclick="showPhase('p3',this)">Phase 3 — Intensity (Wks 9–12)</div>
   </div>
 
-  <!-- ===================== PHASE 1 ===================== -->
+  <!-- ============================== PHASE 1 ============================== -->
   <div id="p1" class="phase-panel active">
-    <div class="tip-box" style="margin-bottom:18px">
-      <strong>Phase 1 focus:</strong> Learn the movements. Every rep is about form, not load. Use the video links next to each exercise — watch before you lift. 3 sets across all exercises. Rest 60–75 seconds between sets.
-    </div>
+    <div class="tip-box" style="margin-bottom:18px"><strong>Phase 1 focus:</strong> Master every movement before adding load. Watch the form videos before your first rep of any new exercise. Use empty barbell or lightest weight available. Rest 60–75s between sets.</div>
 
-    <!-- P1 Day 1 -->
+    <!-- P1 D1 Lower -->
     <div class="day-card open">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">1</div>
+        <div class="day-header-left"><div class="day-num">1</div>
           <div><div class="day-title">Lower Body Strength</div><div class="day-meta">Monday · ~50 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Strength</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong> — March in place, hip circles, leg swings (10 each), bodyweight squat × 10</div>
+        <div class="phase-row"><span class="pdot"></span><div class="phase-row-content"><strong>Warm-up (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=QH0SRdCGXHU" target="_blank">▶ Hip Circles + Leg Swings</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=xyNwxiuERXc" target="_blank">▶ Cat-Cow</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=f-KL4VNN96E" target="_blank">▶ BW Squat × 10</a>
+          </div>
+        </div></div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
+          <thead><tr><th style="width:46%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">Goblet Squat</div><div class="ex-note">Hold DB at chest; sit back and down, knees track over toes</div><a class="video-link" href="https://www.youtube.com/watch?v=BR4tlEE_A98" target="_blank">▶ Form Video</a></td><td>3</td><td>12–15</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Romanian Deadlift</div><div class="ex-note">Hinge at hips, soft knees, feel the hamstring stretch</div><a class="video-link" href="https://www.youtube.com/watch?v=hQgFixeXdZo" target="_blank">▶ Form Video</a></td><td>3</td><td>10–12</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Reverse Lunge</div><div class="ex-note">Step back, lower back knee toward floor; DBs at sides</div><a class="video-link" href="https://www.youtube.com/watch?v=GcYirgCLhnI" target="_blank">▶ Form Video</a></td><td>3</td><td>10 ea</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Dumbbell Glute Bridge</div><div class="ex-note">DB on hips; drive through heels, squeeze glutes at top</div><a class="video-link" href="https://www.youtube.com/watch?v=E6VLOEz7tWE" target="_blank">▶ Form Video</a></td><td>3</td><td>15</td><td>45s</td></tr>
-            <tr><td><div class="ex-name">Standing Calf Raise</div><div class="ex-note">DBs at sides; 2-count up, 2-count down</div></td><td>3</td><td>15–20</td><td>30s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Back Squat</div>
+              <div class="ex-note">Start with empty bar; heels shoulder-width, bar on traps</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=f-KL4VNN96E" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12–15</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Romanian Deadlift</div>
+              <div class="ex-note">Hip hinge with bar close to legs; soft knees throughout</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=1srqEAPcUCc" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10–12</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">DB Reverse Lunge</div>
+              <div class="ex-note">Step back, lower back knee toward floor; DBs at sides</div>
+              <span class="equip-tag eq-db">DB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=GcYirgCLhnI" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10 ea</td><td>60s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Hip Thrust</div>
+              <div class="ex-note">Upper back on bench; bar padded across hips; drive and squeeze</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=pF17m_CXfL0" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12–15</td><td>60s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Glute Kickback</div>
+              <div class="ex-note">Ankle attachment at low pulley; slow controlled extension</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=VSgMyiOu0uE" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12 ea</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">Standing Calf Raise (BB or DB)</div>
+              <div class="ex-note">2-count up, 2-count down; full range of motion</div>
+              <span class="equip-tag eq-bb">BB</span><span class="equip-tag eq-db">DB</span>
+            </td><td>3</td><td>15–20</td><td>30s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (5 min)</strong> — Seated hamstring stretch, figure-4 stretch, quad stretch against wall</div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=D8dJ9K7SIiE" target="_blank">▶ Seated Hamstring Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=VgjgTGnBkx0" target="_blank">▶ Figure-4 Glute Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=WnZ8snlfNec" target="_blank">▶ Standing Quad Stretch</a>
+          </div>
+        </div></div>
       </div>
     </div>
 
-    <!-- P1 Day 2 -->
+    <!-- P1 D2 Cardio -->
     <div class="day-card">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">2</div>
+        <div class="day-header-left"><div class="day-num">2</div>
           <div><div class="day-title">Cardio + Core</div><div class="day-meta">Tuesday · ~45 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Cardio</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong> — Arm circles, hip circles, slow step-touch</div>
+        <div class="phase-row"><span class="pdot"></span><div class="phase-row-content"><strong>Warm-up (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=mwDgFY86zck" target="_blank">▶ Arm Circles</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=QH0SRdCGXHU" target="_blank">▶ Hip Circles</a>
+          </div>
+        </div></div>
         <div class="cardio-block">
-          <div class="cardio-lbl">Low-Impact Cardio — 20 Minutes (Phase 1)</div>
-          <div class="cardio-desc">Brisk walking outdoors or indoor march circuit: 1 min march in place → 1 min side step-touch → 1 min slow high knees. Repeat for 20 minutes. Moderate effort — you should be able to hold a short conversation.</div>
+          <div class="cardio-lbl">Low-Impact Cardio — 20 Min (Phase 1)</div>
+          <div class="cardio-desc">Brisk walking outdoors or indoor march circuit: 1 min march in place → 1 min side step-touch → 1 min slow high knees. Repeat for 20 minutes. Moderate effort — you should be able to hold a short conversation but feel working.</div>
         </div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Core Exercise</th><th>Sets</th><th>Reps/Time</th><th>Rest</th></tr></thead>
+          <thead><tr><th style="width:46%">Core Exercise</th><th>Sets</th><th>Reps/Time</th><th>Rest</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">Dead Bug</div><div class="ex-note">Lower back glued to floor; slow and controlled</div><a class="video-link" href="https://www.youtube.com/watch?v=XcYtWYMz39w" target="_blank">▶ Form Video</a></td><td>3</td><td>8 ea</td><td>45s</td></tr>
-            <tr><td><div class="ex-name">Modified Plank (knees)</div><div class="ex-note">Keep hips level; build toward full plank in Phase 2</div></td><td>3</td><td>20–30s</td><td>45s</td></tr>
-            <tr><td><div class="ex-name">Glute Bridge Hold</div><div class="ex-note">Hold at top for time; brace core throughout</div></td><td>3</td><td>30s</td><td>30s</td></tr>
-            <tr><td><div class="ex-name">Seated Russian Twist</div><div class="ex-note">Light DB; lean back slightly, rotate side to side</div></td><td>3</td><td>10 ea</td><td>30s</td></tr>
+            <tr><td>
+              <div class="ex-name">Dead Bug</div>
+              <div class="ex-note">Low back glued to floor; slow and controlled</div>
+              <span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=XcYtWYMz39w" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>8 ea</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">Modified Plank (on knees)</div>
+              <div class="ex-note">Hips level; progress toward full plank over time</div>
+              <span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span>
+            </td><td>3</td><td>20–30s</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Woodchop (high to low)</div>
+              <div class="ex-note">Rotate from core, not arms; light weight Phase 1</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=Gwcf4TOj1hc" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10 ea</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">Bird Dog</div>
+              <div class="ex-note">Extend opposite arm + leg; 2-second hold at top</div>
+              <span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=LaLKNS7mxrk" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10 ea</td><td>30s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (5 min)</strong> — Child's pose, supine twist each side, deep breathing</div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=jaCOZJPSy2g" target="_blank">▶ Child's Pose</a>
+            <a class="vlink" href="https://www.youtube.com/shorts/lyhWPzuGUHc" target="_blank">▶ Supine Spinal Twist</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=xyNwxiuERXc" target="_blank">▶ Cat-Cow</a>
+          </div>
+        </div></div>
       </div>
     </div>
 
-    <!-- P1 Day 3 -->
+    <!-- P1 D3 Upper -->
     <div class="day-card">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">3</div>
-          <div><div class="day-title">Upper Body Strength</div><div class="day-meta">Wednesday · ~50 min</div></div>
+        <div class="day-header-left"><div class="day-num">3</div>
+          <div><div class="day-title">Upper Body Strength</div><div class="day-meta">Wednesday · ~55 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Strength</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong> — Arm circles, band pull-aparts (or towel), cat-cow, shoulder rolls</div>
+        <div class="phase-row"><span class="pdot"></span><div class="phase-row-content"><strong>Warm-up (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=mwDgFY86zck" target="_blank">▶ Arm Circles</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=xyNwxiuERXc" target="_blank">▶ Cat-Cow</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=AsMMF3YWIIM" target="_blank">▶ Cross-Body Arm Swings</a>
+          </div>
+        </div></div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
+          <thead><tr><th style="width:46%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">DB Floor Press</div><div class="ex-note">Lie on floor; control descent, full press up</div><a class="video-link" href="https://www.youtube.com/watch?v=T0Y3OBF1bNI" target="_blank">▶ Form Video</a></td><td>3</td><td>10–12</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Bent-Over Dumbbell Row</div><div class="ex-note">Hinge 45°, elbows drive back; squeeze shoulder blades</div><a class="video-link" href="https://www.youtube.com/watch?v=vhSH7vuOp-M" target="_blank">▶ Form Video</a></td><td>3</td><td>10–12</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Seated DB Shoulder Press</div><div class="ex-note">Sit on chair; press overhead without arching lower back</div><a class="video-link" href="https://www.youtube.com/watch?v=E9ShwbwZ1zw" target="_blank">▶ Form Video</a></td><td>3</td><td>10–12</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Dumbbell Bicep Curl</div><div class="ex-note">Full range; don't swing at the top</div><a class="video-link" href="https://www.youtube.com/watch?v=0ytqWcmvx4I" target="_blank">▶ Form Video</a></td><td>3</td><td>12</td><td>45s</td></tr>
-            <tr><td><div class="ex-name">Overhead Tricep Extension</div><div class="ex-note">Hold one DB with both hands; lower slowly behind head</div><a class="video-link" href="https://www.youtube.com/watch?v=X-iV-cG8cYs" target="_blank">▶ Form Video</a></td><td>3</td><td>12</td><td>45s</td></tr>
-            <tr><td><div class="ex-name">Lateral Raise</div><div class="ex-note">Light weight; raise to shoulder height, slight elbow bend</div><a class="video-link" href="https://www.youtube.com/watch?v=nnH63icHYXY" target="_blank">▶ Form Video</a></td><td>2</td><td>12–15</td><td>30s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Bench Press</div>
+              <div class="ex-note">Start with just the bar; controlled descent, full press</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=4Y2ZdHCOXok" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10–12</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Seated Row</div>
+              <div class="ex-note">Sit tall; pull to lower chest, squeeze shoulder blades</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=7BkgqzC6WsM" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10–12</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Overhead Press</div>
+              <div class="ex-note">Feet shoulder-width; press bar over head, don't arch back</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=nNMR9fRGRjQ" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10–12</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Lat Pulldown</div>
+              <div class="ex-note">Pull bar to upper chest; lean back slightly, squeeze lats</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=NYQ-o3ffxOc" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10–12</td><td>60s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Bicep Curl</div>
+              <div class="ex-note">Low pulley; elbows stay tucked; full range of motion</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=2MUEL4nL6hA" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Tricep Pushdown (rope)</div>
+              <div class="ex-note">High pulley; elbows at sides; push down and spread at bottom</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=_w-HpW70nSQ" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">DB Lateral Raise</div>
+              <div class="ex-note">Light weight; raise to shoulder height, slight elbow bend</div>
+              <span class="equip-tag eq-db">DB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=nnH63icHYXY" target="_blank">▶ Form Video</a>
+            </td><td>2</td><td>12–15</td><td>30s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (5 min)</strong> — Doorframe chest stretch, cross-body shoulder stretch, neck rolls</div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=bZ-eaBPOGiM" target="_blank">▶ Doorway Chest Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=uNmWSg705JA" target="_blank">▶ Cross-Body Shoulder Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=WnZ8snlfNec" target="_blank">▶ Tricep + Neck Stretch</a>
+          </div>
+        </div></div>
       </div>
     </div>
 
-    <!-- P1 Day 4 -->
+    <!-- P1 D4 Full Body -->
     <div class="day-card">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">4</div>
+        <div class="day-header-left"><div class="day-num">4</div>
           <div><div class="day-title">Full Body Strength</div><div class="day-meta">Friday · ~55 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Strength</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong> — Step-tap jacks × 20, hip circles, arm swings, BW squat × 10</div>
+        <div class="phase-row"><span class="pdot"></span><div class="phase-row-content"><strong>Warm-up (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=QH0SRdCGXHU" target="_blank">▶ Hip Circles + Leg Swings</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=mwDgFY86zck" target="_blank">▶ Arm Circles</a>
+          </div>
+        </div></div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
+          <thead><tr><th style="width:46%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">Goblet Squat to Press</div><div class="ex-note">Squat down, stand and press DB overhead — full body compound</div><a class="video-link" href="https://www.youtube.com/watch?v=bkXemXCLUKs" target="_blank">▶ Form Video</a></td><td>3</td><td>10</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Single-Leg Deadlift (light)</div><div class="ex-note">Hold one DB; hinge and extend back leg; go slow for balance</div><a class="video-link" href="https://www.youtube.com/watch?v=ooGNupLrZJw" target="_blank">▶ Form Video</a></td><td>3</td><td>8 ea</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Sumo Squat + Upright Row</div><div class="ex-note">Wide stance; as you rise, pull DBs up to chin</div><a class="video-link" href="https://www.youtube.com/watch?v=3ezKtCAZ0lU" target="_blank">▶ Form Video</a></td><td>3</td><td>12</td><td>45s</td></tr>
-            <tr><td><div class="ex-name">Push-Up (modified or full)</div><div class="ex-note">On knees if needed; chest touches floor each rep</div><a class="video-link" href="https://www.youtube.com/watch?v=rR1efh-33AQ" target="_blank">▶ Form Video</a></td><td>3</td><td>8–12</td><td>45s</td></tr>
-            <tr><td><div class="ex-name">DB Hip Thrust (couch/bench)</div><div class="ex-note">Upper back on couch, DB on hips; drive up and squeeze</div><a class="video-link" href="https://www.youtube.com/watch?v=0kx1QOzhTCQ" target="_blank">▶ Form Video</a></td><td>3</td><td>12–15</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">DB Goblet Squat to Press</div>
+              <div class="ex-note">Squat down, stand and press DB overhead — full body compound</div>
+              <span class="equip-tag eq-db">DB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=bkXemXCLUKs" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10</td><td>60s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Romanian Deadlift</div>
+              <div class="ex-note">Focus on hamstring stretch and controlled hip hinge</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=1srqEAPcUCc" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10</td><td>60s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Face Pull</div>
+              <div class="ex-note">Rope at face height; pull to forehead, elbows high and wide</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=0Po47vvj9g4" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>15</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">Push-Up (modified or full)</div>
+              <div class="ex-note">On knees if needed; chest touches floor each rep</div>
+              <span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=rR1efh-33AQ" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>8–12</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Hip Thrust</div>
+              <div class="ex-note">Upper back on bench; drive hips up, squeeze at top</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=pF17m_CXfL0" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12–15</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">DB Single-Leg Deadlift</div>
+              <div class="ex-note">One DB; hinge and extend back leg; go slow for balance</div>
+              <span class="equip-tag eq-db">DB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=ooGNupLrZJw" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>8 ea</td><td>45s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (5 min)</strong> — Full body stretch: hips, hamstrings, chest, shoulders</div>
-        <div class="tip-box">Hardest session of the week. If energy is low, drop one set per exercise — consistency over perfection, always.</div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=D8dJ9K7SIiE" target="_blank">▶ Seated Hamstring Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=bZ-eaBPOGiM" target="_blank">▶ Doorway Chest Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=VgjgTGnBkx0" target="_blank">▶ Figure-4 Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/shorts/lyhWPzuGUHc" target="_blank">▶ Supine Spinal Twist</a>
+          </div>
+        </div></div>
+        <div class="tip-box">Hardest session of the week. If energy is low, drop one set per exercise — consistency over perfection.</div>
       </div>
     </div>
 
-    <!-- P1 Day 5 -->
+    <!-- P1 D5 Cardio/Core -->
     <div class="day-card">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">5</div>
+        <div class="day-header-left"><div class="day-num">5</div>
           <div><div class="day-title">Cardio + Core</div><div class="day-meta">Saturday · ~45 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Cardio</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong> — Easy step touch, arm swings, slow march</div>
+        <div class="phase-row"><span class="pdot"></span><div class="phase-row-content"><strong>Warm-up (5 min)</strong>
+          <div class="stretch-links"><a class="vlink" href="https://www.youtube.com/watch?v=QH0SRdCGXHU" target="_blank">▶ Hip Circles + Leg Swings</a></div>
+        </div></div>
         <div class="cardio-block">
-          <div class="cardio-lbl">Active Recovery Walk — 20 Minutes</div>
-          <div class="cardio-desc">This session should feel easier than the strength days. Walk outdoors at a comfortable brisk pace, or alternate march/side-step indoors. This is active recovery, not a grind — the goal is blood flow and light calorie burn.</div>
+          <div class="cardio-lbl">Active Recovery Walk — 20 Min</div>
+          <div class="cardio-desc">Walk outdoors at a comfortable brisk pace, or alternate march/side-step indoors. Active recovery — keep it easy. The goal is blood flow and light calorie burn, not exhaustion.</div>
         </div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Core Exercise</th><th>Sets</th><th>Reps/Time</th><th>Rest</th></tr></thead>
+          <thead><tr><th style="width:46%">Core Exercise</th><th>Sets</th><th>Reps/Time</th><th>Rest</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">Bird Dog</div><div class="ex-note">Hands and knees; extend opposite arm + leg slowly</div><a class="video-link" href="https://www.youtube.com/watch?v=LaLKNS7mxrk" target="_blank">▶ Form Video</a></td><td>3</td><td>10 ea</td><td>30s</td></tr>
-            <tr><td><div class="ex-name">Side Plank (modified on knee)</div><div class="ex-note">Keep hips stacked; build to full over time</div></td><td>2</td><td>20–25s ea</td><td>30s</td></tr>
-            <tr><td><div class="ex-name">Slow Mountain Climber</div><div class="ex-note">Bring knee slowly to chest, no running — controlled pace</div></td><td>3</td><td>10 ea</td><td>30s</td></tr>
+            <tr><td>
+              <div class="ex-name">Bird Dog</div>
+              <span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=LaLKNS7mxrk" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10 ea</td><td>30s</td></tr>
+            <tr><td>
+              <div class="ex-name">Side Plank (modified on knee)</div>
+              <div class="ex-note">Keep hips stacked; progress to full over time</div>
+              <span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span>
+            </td><td>2</td><td>20–25s ea</td><td>30s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Woodchop (low to high)</div>
+              <div class="ex-note">Opposite direction from Tue; rotational core work</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=Gwcf4TOj1hc" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10 ea</td><td>30s</td></tr>
+            <tr><td>
+              <div class="ex-name">Dead Bug</div>
+              <span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=XcYtWYMz39w" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>8 ea</td><td>30s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (5–8 min)</strong> — Walk slowly, deep breathing, full body stretch — take your time</div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (6 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=jaCOZJPSy2g" target="_blank">▶ Child's Pose</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=xyNwxiuERXc" target="_blank">▶ Cat-Cow</a>
+            <a class="vlink" href="https://www.youtube.com/shorts/lyhWPzuGUHc" target="_blank">▶ Supine Spinal Twist</a>
+          </div>
+        </div></div>
       </div>
     </div>
-  </div><!-- end phase 1 -->
+  </div><!-- end p1 -->
 
 
-  <!-- ===================== PHASE 2 ===================== -->
+  <!-- ============================== PHASE 2 ============================== -->
   <div id="p2" class="phase-panel">
-    <div class="tip-box" style="margin-bottom:18px; border-left-color:#7a5c8a;">
-      <strong>Phase 2 focus:</strong> Add load and volume. If the last 2 reps of a set feel easy, go up 2–5 lbs. Cardio duration increases to 25 minutes. Try to reduce rest by 10 seconds where possible. Add a 4th set to main compound lifts.
-    </div>
+    <div class="tip-box" style="margin-bottom:18px;border-left-color:#7a5c8a"><strong>Phase 2 focus:</strong> Add weight to the barbell every 1–2 weeks when the last 2 reps feel easy. Add a 4th set to all compound lifts. Cardio grows to 25 min. Rest 60s between sets.</div>
 
-    <!-- P2 Day 1 -->
+    <!-- P2 D1 -->
     <div class="day-card open">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">1</div>
+        <div class="day-header-left"><div class="day-num">1</div>
           <div><div class="day-title">Lower Body — More Volume</div><div class="day-meta">Monday · ~55 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Strength</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong> — March, hip circles, leg swings, BW squat × 12</div>
+        <div class="phase-row"><span class="pdot"></span><div class="phase-row-content"><strong>Warm-up (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=QH0SRdCGXHU" target="_blank">▶ Leg Swings + Hip Circles</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=xyNwxiuERXc" target="_blank">▶ Cat-Cow</a>
+          </div>
+        </div></div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
+          <thead><tr><th style="width:46%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">Goblet Squat</div><div class="ex-note">Heavier than Phase 1; aim for controlled depth</div><a class="video-link" href="https://www.youtube.com/watch?v=BR4tlEE_A98" target="_blank">▶ Form Video</a></td><td>4</td><td>12</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Romanian Deadlift</div><div class="ex-note">Focus on full hip hinge range of motion</div><a class="video-link" href="https://www.youtube.com/watch?v=hQgFixeXdZo" target="_blank">▶ Form Video</a></td><td>4</td><td>10</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Reverse Lunge</div><div class="ex-note">Add a 2-second pause at the bottom</div><a class="video-link" href="https://www.youtube.com/watch?v=GcYirgCLhnI" target="_blank">▶ Form Video</a></td><td>3</td><td>12 ea</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Dumbbell Glute Bridge</div><div class="ex-note">Heavier DB; add a 2-second hold at top</div><a class="video-link" href="https://www.youtube.com/watch?v=E6VLOEz7tWE" target="_blank">▶ Form Video</a></td><td>4</td><td>15</td><td>45s</td></tr>
-            <tr><td><div class="ex-name">Lateral Dumbbell Side Step</div><div class="ex-note">Step wide and slow; DBs at sides for resistance</div></td><td>3</td><td>12 ea</td><td>45s</td></tr>
-            <tr><td><div class="ex-name">Standing Calf Raise</div><div class="ex-note">Slow 3-count up, 2-count down</div></td><td>3</td><td>15–20</td><td>30s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Back Squat (heavier)</div>
+              <div class="ex-note">Add 5–10 lbs from Phase 1; maintain full depth</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=f-KL4VNN96E" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>10–12</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Romanian Deadlift</div>
+              <div class="ex-note">Add 2-second pause at bottom; heavier than Phase 1</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=1srqEAPcUCc" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>10</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">DB Reverse Lunge (heavier)</div>
+              <div class="ex-note">Add 2-second pause at the bottom</div>
+              <span class="equip-tag eq-db">DB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=GcYirgCLhnI" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12 ea</td><td>60s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Hip Thrust (heavier)</div>
+              <div class="ex-note">Add a 2-second squeeze at the top</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=pF17m_CXfL0" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>12</td><td>60s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Glute Kickback (heavier)</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=VSgMyiOu0uE" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>15 ea</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">Calf Raise (BB on traps)</div>
+              <div class="ex-note">Slow 3-count up, 2-count down</div>
+              <span class="equip-tag eq-bb">BB</span>
+            </td><td>3</td><td>15–20</td><td>30s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (5 min)</strong> — Hamstring stretch, pigeon or figure-4, quad stretch</div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=D8dJ9K7SIiE" target="_blank">▶ Seated Hamstring Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=VgjgTGnBkx0" target="_blank">▶ Figure-4 Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=WnZ8snlfNec" target="_blank">▶ Standing Quad Stretch</a>
+          </div>
+        </div></div>
       </div>
     </div>
 
-    <!-- P2 Day 2 -->
+    <!-- P2 D2 -->
     <div class="day-card">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">2</div>
+        <div class="day-header-left"><div class="day-num">2</div>
           <div><div class="day-title">Cardio + Core — Longer</div><div class="day-meta">Tuesday · ~50 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Cardio</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong></div>
+        <div class="phase-row"><span class="pdot"></span><div class="phase-row-content"><strong>Warm-up (5 min)</strong>
+          <div class="stretch-links"><a class="vlink" href="https://www.youtube.com/watch?v=mwDgFY86zck" target="_blank">▶ Arm Circles</a><a class="vlink" href="https://www.youtube.com/watch?v=QH0SRdCGXHU" target="_blank">▶ Hip Circles</a></div>
+        </div></div>
         <div class="cardio-block">
-          <div class="cardio-lbl">Low-Impact Intervals — 25 Minutes (Phase 2)</div>
-          <div class="cardio-desc">Alternate 2 min moderate walk pace with 1 min brisk purposeful pace. Indoors: march circuit with added step-up on a stair or sturdy step. You should feel your heart rate clearly elevated during the brisk intervals.</div>
+          <div class="cardio-lbl">Low-Impact Intervals — 25 Min (Phase 2)</div>
+          <div class="cardio-desc">2 min moderate walk + 1 min brisk walk, repeated. Indoors: add step-ups on a stair between march intervals to raise intensity. Heart rate should be clearly elevated during brisk intervals.</div>
         </div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Core Exercise</th><th>Sets</th><th>Reps/Time</th><th>Rest</th></tr></thead>
+          <thead><tr><th style="width:46%">Core Exercise</th><th>Sets</th><th>Reps/Time</th><th>Rest</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">Dead Bug</div><div class="ex-note">Add a slow 3-second lowering phase</div><a class="video-link" href="https://www.youtube.com/watch?v=XcYtWYMz39w" target="_blank">▶ Form Video</a></td><td>3</td><td>10 ea</td><td>40s</td></tr>
-            <tr><td><div class="ex-name">Full Plank (or knees)</div><div class="ex-note">Push toward full plank; hold longer than Phase 1</div></td><td>3</td><td>30–40s</td><td>40s</td></tr>
-            <tr><td><div class="ex-name">Bird Dog</div><div class="ex-note">Add a 2-second hold at full extension</div><a class="video-link" href="https://www.youtube.com/watch?v=LaLKNS7mxrk" target="_blank">▶ Form Video</a></td><td>3</td><td>10 ea</td><td>30s</td></tr>
-            <tr><td><div class="ex-name">Russian Twist (heavier DB)</div><div class="ex-note">Increase weight from Phase 1</div></td><td>3</td><td>12 ea</td><td>30s</td></tr>
+            <tr><td>
+              <div class="ex-name">Dead Bug</div>
+              <div class="ex-note">Add a 3-second lowering phase</div>
+              <span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=XcYtWYMz39w" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10 ea</td><td>40s</td></tr>
+            <tr><td>
+              <div class="ex-name">Full Plank (or knees)</div>
+              <div class="ex-note">Build toward full plank this phase</div>
+              <span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span>
+            </td><td>3</td><td>30–40s</td><td>40s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Woodchop (heavier)</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=Gwcf4TOj1hc" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12 ea</td><td>35s</td></tr>
+            <tr><td>
+              <div class="ex-name">Bird Dog (with 3-sec hold)</div>
+              <span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=LaLKNS7mxrk" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10 ea</td><td>30s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (5 min)</strong></div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=jaCOZJPSy2g" target="_blank">▶ Child's Pose</a>
+            <a class="vlink" href="https://www.youtube.com/shorts/lyhWPzuGUHc" target="_blank">▶ Supine Spinal Twist</a>
+          </div>
+        </div></div>
       </div>
     </div>
 
-    <!-- P2 Day 3 -->
+    <!-- P2 D3 -->
     <div class="day-card">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">3</div>
+        <div class="day-header-left"><div class="day-num">3</div>
           <div><div class="day-title">Upper Body — Progressive Load</div><div class="day-meta">Wednesday · ~55 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Strength</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong></div>
+        <div class="phase-row"><span class="pdot"></span><div class="phase-row-content"><strong>Warm-up (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=mwDgFY86zck" target="_blank">▶ Arm Circles</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=AsMMF3YWIIM" target="_blank">▶ Cross-Body Arm Swings</a>
+          </div>
+        </div></div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
+          <thead><tr><th style="width:46%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">DB Floor Press</div><div class="ex-note">Increase weight; 2-second pause at chest level</div><a class="video-link" href="https://www.youtube.com/watch?v=T0Y3OBF1bNI" target="_blank">▶ Form Video</a></td><td>4</td><td>10</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Bent-Over DB Row</div><div class="ex-note">Heavier; full range, squeeze hard at top</div><a class="video-link" href="https://www.youtube.com/watch?v=vhSH7vuOp-M" target="_blank">▶ Form Video</a></td><td>4</td><td>10</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Seated DB Shoulder Press</div><div class="ex-note">Increase load from Phase 1</div><a class="video-link" href="https://www.youtube.com/watch?v=E9ShwbwZ1zw" target="_blank">▶ Form Video</a></td><td>3</td><td>10</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Hammer Curl</div><div class="ex-note">Neutral grip (thumbs up); slower lowering phase</div></td><td>3</td><td>12</td><td>45s</td></tr>
-            <tr><td><div class="ex-name">Overhead Tricep Extension</div><div class="ex-note">Heavier; controlled descent</div><a class="video-link" href="https://www.youtube.com/watch?v=X-iV-cG8cYs" target="_blank">▶ Form Video</a></td><td>3</td><td>12</td><td>45s</td></tr>
-            <tr><td><div class="ex-name">Lateral Raise</div><div class="ex-note">Slightly heavier than Phase 1</div><a class="video-link" href="https://www.youtube.com/watch?v=nnH63icHYXY" target="_blank">▶ Form Video</a></td><td>3</td><td>12</td><td>30s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Bench Press (heavier)</div>
+              <div class="ex-note">2-second pause at chest; controlled press</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=4Y2ZdHCOXok" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>8–10</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Seated Row (heavier)</div>
+              <div class="ex-note">Full stretch forward, explosive pull, 1-sec squeeze</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=7BkgqzC6WsM" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>10</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Overhead Press (heavier)</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=nNMR9fRGRjQ" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>8–10</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Lat Pulldown (heavier)</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=NYQ-o3ffxOc" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10</td><td>60s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Face Pull</div>
+              <div class="ex-note">Every upper body day — great for shoulder health</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=0Po47vvj9g4" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>15</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Bicep Curl (heavier)</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=2MUEL4nL6hA" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Tricep Pushdown (heavier)</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=_w-HpW70nSQ" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12</td><td>45s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (5 min)</strong></div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=bZ-eaBPOGiM" target="_blank">▶ Doorway Chest Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=uNmWSg705JA" target="_blank">▶ Cross-Body Shoulder Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=WnZ8snlfNec" target="_blank">▶ Tricep Stretch</a>
+          </div>
+        </div></div>
       </div>
     </div>
 
-    <!-- P2 Day 4 -->
+    <!-- P2 D4 -->
     <div class="day-card">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">4</div>
+        <div class="day-header-left"><div class="day-num">4</div>
           <div><div class="day-title">Full Body — Increased Demand</div><div class="day-meta">Friday · ~55 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Strength</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong></div>
+        <div class="phase-row"><span class="pdot"></span><div class="phase-row-content"><strong>Warm-up (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=QH0SRdCGXHU" target="_blank">▶ Leg Swings + Hip Circles</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=mwDgFY86zck" target="_blank">▶ Arm Circles</a>
+          </div>
+        </div></div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
+          <thead><tr><th style="width:46%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">Goblet Squat to Press</div><div class="ex-note">Heavier than Phase 1; control the whole movement</div><a class="video-link" href="https://www.youtube.com/watch?v=bkXemXCLUKs" target="_blank">▶ Form Video</a></td><td>4</td><td>10</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Single-Leg RDL</div><div class="ex-note">Slightly heavier; add a 1-second pause at the bottom</div><a class="video-link" href="https://www.youtube.com/watch?v=ooGNupLrZJw" target="_blank">▶ Form Video</a></td><td>3</td><td>10 ea</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Renegade Row</div><div class="ex-note">Plank with DBs; row one side at a time (knees ok)</div></td><td>3</td><td>8 ea</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Sumo Squat + Upright Row</div><div class="ex-note">Heavier DBs; smooth combo movement</div><a class="video-link" href="https://www.youtube.com/watch?v=3ezKtCAZ0lU" target="_blank">▶ Form Video</a></td><td>3</td><td>12</td><td>45s</td></tr>
-            <tr><td><div class="ex-name">Push-Up</div><div class="ex-note">Try full plank push-up; modify only if necessary</div><a class="video-link" href="https://www.youtube.com/watch?v=rR1efh-33AQ" target="_blank">▶ Form Video</a></td><td>3</td><td>10</td><td>45s</td></tr>
-            <tr><td><div class="ex-name">DB Hip Thrust</div><div class="ex-note">Heavier DB; add a 2-second hold at top</div><a class="video-link" href="https://www.youtube.com/watch?v=0kx1QOzhTCQ" target="_blank">▶ Form Video</a></td><td>4</td><td>12</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Back Squat</div>
+              <div class="ex-note">Same weight as Monday; second exposure this week</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=f-KL4VNN96E" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Bench Press</div>
+              <div class="ex-note">Same weight as Wednesday</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=4Y2ZdHCOXok" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Seated Row</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=7BkgqzC6WsM" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12</td><td>60s</td></tr>
+            <tr><td>
+              <div class="ex-name">Barbell Hip Thrust</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=pF17m_CXfL0" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12</td><td>60s</td></tr>
+            <tr><td>
+              <div class="ex-name">Push-Up (try full plank)</div>
+              <span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=rR1efh-33AQ" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Face Pull</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=0Po47vvj9g4" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>15</td><td>30s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (5 min)</strong></div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=D8dJ9K7SIiE" target="_blank">▶ Seated Hamstring Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=bZ-eaBPOGiM" target="_blank">▶ Doorway Chest Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=VgjgTGnBkx0" target="_blank">▶ Figure-4 Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/shorts/lyhWPzuGUHc" target="_blank">▶ Supine Spinal Twist</a>
+          </div>
+        </div></div>
       </div>
     </div>
 
-    <!-- P2 Day 5 -->
+    <!-- P2 D5 -->
     <div class="day-card">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">5</div>
+        <div class="day-header-left"><div class="day-num">5</div>
           <div><div class="day-title">Cardio + Core</div><div class="day-meta">Saturday · ~50 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Cardio</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong></div>
         <div class="cardio-block">
-          <div class="cardio-lbl">Interval Walk — 25 Minutes</div>
-          <div class="cardio-desc">2 min moderate + 1 min brisk, repeated. By the end you should feel genuinely fatigued but not exhausted. Indoors: add step-ups on a stair between march intervals to raise intensity.</div>
+          <div class="cardio-lbl">Interval Walk — 25 Min</div>
+          <div class="cardio-desc">2 min moderate + 1 min brisk. Outdoors preferred. Indoors: add step-ups on a stair between march intervals.</div>
         </div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Core Exercise</th><th>Sets</th><th>Reps/Time</th><th>Rest</th></tr></thead>
+          <thead><tr><th style="width:46%">Core Exercise</th><th>Sets</th><th>Reps/Time</th><th>Rest</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">Bird Dog</div><a class="video-link" href="https://www.youtube.com/watch?v=LaLKNS7mxrk" target="_blank">▶ Form Video</a></td><td>3</td><td>12 ea</td><td>30s</td></tr>
-            <tr><td><div class="ex-name">Side Plank (full or modified)</div><div class="ex-note">Try full plank on foot this phase</div></td><td>3</td><td>25–35s ea</td><td>30s</td></tr>
-            <tr><td><div class="ex-name">Slow Mountain Climber</div></td><td>3</td><td>12 ea</td><td>30s</td></tr>
-            <tr><td><div class="ex-name">Dead Bug</div><a class="video-link" href="https://www.youtube.com/watch?v=XcYtWYMz39w" target="_blank">▶ Form Video</a></td><td>2</td><td>10 ea</td><td>30s</td></tr>
+            <tr><td><div class="ex-name">Bird Dog (with 3-sec hold)</div><span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span><a class="vlink" href="https://www.youtube.com/watch?v=LaLKNS7mxrk" target="_blank">▶ Form Video</a></td><td>3</td><td>12 ea</td><td>30s</td></tr>
+            <tr><td><div class="ex-name">Side Plank (full or modified)</div><span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span></td><td>3</td><td>25–35s ea</td><td>30s</td></tr>
+            <tr><td><div class="ex-name">Cable Woodchop</div><span class="equip-tag eq-cable">Cable</span><a class="vlink" href="https://www.youtube.com/watch?v=Gwcf4TOj1hc" target="_blank">▶ Form Video</a></td><td>3</td><td>12 ea</td><td>30s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (5 min)</strong></div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=jaCOZJPSy2g" target="_blank">▶ Child's Pose</a>
+            <a class="vlink" href="https://www.youtube.com/shorts/lyhWPzuGUHc" target="_blank">▶ Supine Spinal Twist</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=xyNwxiuERXc" target="_blank">▶ Cat-Cow</a>
+          </div>
+        </div></div>
       </div>
     </div>
-  </div><!-- end phase 2 -->
+  </div><!-- end p2 -->
 
 
-  <!-- ===================== PHASE 3 ===================== -->
+  <!-- ============================== PHASE 3 ============================== -->
   <div id="p3" class="phase-panel">
-    <div class="tip-box" style="margin-bottom:18px; border-left-color:#3a7a6a;">
-      <strong>Phase 3 focus:</strong> Supersets and metabolic circuits. Pair exercises back-to-back with 15–20 seconds between them, then rest 60–75 seconds after the pair. Cardio hits 30 minutes. This is where the recomp accelerates.
-    </div>
+    <div class="tip-box" style="margin-bottom:18px;border-left-color:#3a7a6a"><strong>Phase 3 focus:</strong> Supersets on strength days — A1 → 15s → A2 → 75s rest. Circuit on Fridays. Cardio hits 30 minutes. This is where recomp accelerates.</div>
 
-    <!-- P3 Day 1 -->
+    <!-- P3 D1 -->
     <div class="day-card open">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">1</div>
-          <div><div class="day-title">Lower Body — Supersets</div><div class="day-meta">Monday · ~55–60 min</div></div>
+        <div class="day-header-left"><div class="day-num">1</div>
+          <div><div class="day-title">Lower Body — Supersets</div><div class="day-meta">Monday · ~60 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Strength</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong></div>
-        <div class="tip-box" style="margin:12px 0 6px">Perform A1 → rest 15s → A2 → rest 60–75s. Repeat for all sets before moving on.</div>
+        <div class="phase-row"><span class="pdot"></span><div class="phase-row-content"><strong>Warm-up (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=QH0SRdCGXHU" target="_blank">▶ Leg Swings + Hip Circles</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=xyNwxiuERXc" target="_blank">▶ Cat-Cow</a>
+          </div>
+        </div></div>
+        <div class="tip-box" style="margin:12px 0 6px">A1 → rest 15s → A2 → rest 75s. Complete all sets of A before moving to B.</div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
+          <thead><tr><th style="width:46%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">A1 — Goblet Squat (heavy)</div><a class="video-link" href="https://www.youtube.com/watch?v=BR4tlEE_A98" target="_blank">▶ Form Video</a></td><td>4</td><td>10</td><td>15s (then A2)</td></tr>
-            <tr><td><div class="ex-name">A2 — Jump Squat (low-impact option: pulse squat × 15)</div><div class="ex-note">Keep it low-impact if joints need it</div></td><td>4</td><td>10</td><td>75s</td></tr>
-            <tr><td><div class="ex-name">B1 — Romanian Deadlift (heavy)</div><a class="video-link" href="https://www.youtube.com/watch?v=hQgFixeXdZo" target="_blank">▶ Form Video</a></td><td>4</td><td>10</td><td>15s (then B2)</td></tr>
-            <tr><td><div class="ex-name">B2 — Glute Bridge (paused, heavy)</div><a class="video-link" href="https://www.youtube.com/watch?v=E6VLOEz7tWE" target="_blank">▶ Form Video</a></td><td>4</td><td>12</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Reverse Lunge (heavy)</div><div class="ex-note">Slow descent, explosive drive up</div><a class="video-link" href="https://www.youtube.com/watch?v=GcYirgCLhnI" target="_blank">▶ Form Video</a></td><td>3</td><td>12 ea</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Calf Raise + Hold</div><div class="ex-note">Rise, hold 2s at top, lower 3s — burn set</div></td><td>3</td><td>15–20</td><td>30s</td></tr>
+            <tr><td>
+              <div class="ex-name">A1 — Barbell Back Squat (heavy)</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=f-KL4VNN96E" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>8–10</td><td>15s → A2</td></tr>
+            <tr><td>
+              <div class="ex-name">A2 — Cable Glute Kickback</div>
+              <div class="ex-note">Immediate after squat; light load, controlled</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=VSgMyiOu0uE" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>12 ea</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">B1 — Barbell RDL (heavy)</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=1srqEAPcUCc" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>8–10</td><td>15s → B2</td></tr>
+            <tr><td>
+              <div class="ex-name">B2 — Barbell Hip Thrust (paused)</div>
+              <div class="ex-note">2-second hold at top each rep</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=pF17m_CXfL0" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>10</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">DB Reverse Lunge (heavy)</div>
+              <div class="ex-note">Slow descent, explosive drive up</div>
+              <span class="equip-tag eq-db">DB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=GcYirgCLhnI" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12 ea</td><td>60s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (5 min)</strong></div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=D8dJ9K7SIiE" target="_blank">▶ Seated Hamstring Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=VgjgTGnBkx0" target="_blank">▶ Figure-4 Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=WnZ8snlfNec" target="_blank">▶ Standing Quad Stretch</a>
+          </div>
+        </div></div>
       </div>
     </div>
 
-    <!-- P3 Day 2 -->
+    <!-- P3 D2 -->
     <div class="day-card">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">2</div>
+        <div class="day-header-left"><div class="day-num">2</div>
           <div><div class="day-title">Cardio + Core — Full Circuit</div><div class="day-meta">Tuesday · ~55 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Cardio</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong></div>
         <div class="cardio-block">
-          <div class="cardio-lbl">Interval Walk — 30 Minutes (Phase 3)</div>
-          <div class="cardio-desc">2 min moderate + 1 min brisk walk, repeat. Outdoors preferred. Or: 3-minute step-up circuits on a stair (up and down continuously), alternating with 2-minute marching. By the end your cardiovascular capacity should be clearly stronger than Week 1.</div>
+          <div class="cardio-lbl">Interval Walk — 30 Min (Phase 3)</div>
+          <div class="cardio-desc">2 min moderate + 1 min brisk, repeated. Outdoors strongly preferred at this stage. Indoors: continuous stair step-ups alternating with march. Full 30 minutes.</div>
         </div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Core Circuit</th><th>Sets</th><th>Reps/Time</th><th>Rest</th></tr></thead>
+          <thead><tr><th style="width:46%">Core Circuit (3 rounds)</th><th>Sets</th><th>Reps/Time</th><th>Rest</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">Dead Bug (weighted)</div><div class="ex-note">Hold a light DB in each hand if comfortable</div><a class="video-link" href="https://www.youtube.com/watch?v=XcYtWYMz39w" target="_blank">▶ Form Video</a></td><td>3</td><td>10 ea</td><td>30s</td></tr>
-            <tr><td><div class="ex-name">Full Plank Hold</div></td><td>3</td><td>40–50s</td><td>30s</td></tr>
-            <tr><td><div class="ex-name">Full Side Plank</div></td><td>3</td><td>30–40s ea</td><td>30s</td></tr>
-            <tr><td><div class="ex-name">Slow Mountain Climber</div></td><td>3</td><td>15 ea</td><td>30s</td></tr>
-            <tr><td><div class="ex-name">DB Russian Twist (heavy)</div></td><td>3</td><td>15 ea</td><td>30s</td></tr>
+            <tr><td><div class="ex-name">Dead Bug</div><span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span><a class="vlink" href="https://www.youtube.com/watch?v=XcYtWYMz39w" target="_blank">▶ Form Video</a></td><td>3</td><td>10 ea</td><td>30s</td></tr>
+            <tr><td><div class="ex-name">Full Plank Hold</div><span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span></td><td>3</td><td>40–50s</td><td>30s</td></tr>
+            <tr><td><div class="ex-name">Full Side Plank</div><span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span></td><td>3</td><td>30–40s ea</td><td>30s</td></tr>
+            <tr><td><div class="ex-name">Cable Woodchop (heavy)</div><span class="equip-tag eq-cable">Cable</span><a class="vlink" href="https://www.youtube.com/watch?v=Gwcf4TOj1hc" target="_blank">▶ Form Video</a></td><td>3</td><td>15 ea</td><td>30s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (5 min)</strong></div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=jaCOZJPSy2g" target="_blank">▶ Child's Pose</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=xyNwxiuERXc" target="_blank">▶ Cat-Cow</a>
+            <a class="vlink" href="https://www.youtube.com/shorts/lyhWPzuGUHc" target="_blank">▶ Supine Spinal Twist</a>
+          </div>
+        </div></div>
       </div>
     </div>
 
-    <!-- P3 Day 3 -->
+    <!-- P3 D3 -->
     <div class="day-card">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">3</div>
+        <div class="day-header-left"><div class="day-num">3</div>
           <div><div class="day-title">Upper Body — Supersets</div><div class="day-meta">Wednesday · ~55 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Strength</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong></div>
-        <div class="tip-box" style="margin:12px 0 6px">Supersets again: A1 → 15s → A2 → 75s rest.</div>
+        <div class="phase-row"><span class="pdot"></span><div class="phase-row-content"><strong>Warm-up (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=mwDgFY86zck" target="_blank">▶ Arm Circles</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=AsMMF3YWIIM" target="_blank">▶ Cross-Body Arm Swings</a>
+          </div>
+        </div></div>
+        <div class="tip-box" style="margin:12px 0 6px">Supersets: A1 → 15s → A2 → 75s rest.</div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
+          <thead><tr><th style="width:46%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">A1 — DB Floor Press (heavy)</div><a class="video-link" href="https://www.youtube.com/watch?v=T0Y3OBF1bNI" target="_blank">▶ Form Video</a></td><td>4</td><td>10</td><td>15s (then A2)</td></tr>
-            <tr><td><div class="ex-name">A2 — Bent-Over DB Row (heavy)</div><a class="video-link" href="https://www.youtube.com/watch?v=vhSH7vuOp-M" target="_blank">▶ Form Video</a></td><td>4</td><td>10</td><td>75s</td></tr>
-            <tr><td><div class="ex-name">B1 — Seated DB Shoulder Press</div><a class="video-link" href="https://www.youtube.com/watch?v=E9ShwbwZ1zw" target="_blank">▶ Form Video</a></td><td>3</td><td>10</td><td>15s (then B2)</td></tr>
-            <tr><td><div class="ex-name">B2 — Lateral Raise</div><a class="video-link" href="https://www.youtube.com/watch?v=nnH63icHYXY" target="_blank">▶ Form Video</a></td><td>3</td><td>12</td><td>60s</td></tr>
-            <tr><td><div class="ex-name">Hammer Curl</div></td><td>3</td><td>12</td><td>45s</td></tr>
-            <tr><td><div class="ex-name">Overhead Tricep Extension</div><a class="video-link" href="https://www.youtube.com/watch?v=X-iV-cG8cYs" target="_blank">▶ Form Video</a></td><td>3</td><td>12</td><td>45s</td></tr>
+            <tr><td>
+              <div class="ex-name">A1 — Barbell Bench Press (heavy)</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=4Y2ZdHCOXok" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>8</td><td>15s → A2</td></tr>
+            <tr><td>
+              <div class="ex-name">A2 — Cable Seated Row (heavy)</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=7BkgqzC6WsM" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>10</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">B1 — Barbell Overhead Press</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=nNMR9fRGRjQ" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>8–10</td><td>15s → B2</td></tr>
+            <tr><td>
+              <div class="ex-name">B2 — Cable Lat Pulldown</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=NYQ-o3ffxOc" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>10</td><td>75s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Face Pull</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=0Po47vvj9g4" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>15</td><td>30s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Bicep Curl</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=2MUEL4nL6hA" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12</td><td>30s</td></tr>
+            <tr><td>
+              <div class="ex-name">Cable Tricep Pushdown</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=_w-HpW70nSQ" target="_blank">▶ Form Video</a>
+            </td><td>3</td><td>12</td><td>30s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (5 min)</strong></div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=bZ-eaBPOGiM" target="_blank">▶ Doorway Chest Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=uNmWSg705JA" target="_blank">▶ Cross-Body Shoulder Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=WnZ8snlfNec" target="_blank">▶ Tricep Stretch</a>
+          </div>
+        </div></div>
       </div>
     </div>
 
-    <!-- P3 Day 4 -->
+    <!-- P3 D4 -->
     <div class="day-card">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">4</div>
+        <div class="day-header-left"><div class="day-num">4</div>
           <div><div class="day-title">Full Body — Metabolic Circuit</div><div class="day-meta">Friday · 60 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Strength</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong></div>
-        <div class="tip-box" style="margin:12px 0 6px">Complete all 5 exercises as a circuit with 20s rest between movements. Rest 90 seconds after each full round. Complete 4 rounds total.</div>
+        <div class="phase-row"><span class="pdot"></span><div class="phase-row-content"><strong>Warm-up (5 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=QH0SRdCGXHU" target="_blank">▶ Leg Swings + Hip Circles</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=mwDgFY86zck" target="_blank">▶ Arm Circles</a>
+          </div>
+        </div></div>
+        <div class="tip-box" style="margin:12px 0 6px">Complete all 6 exercises as a circuit. 20s rest between movements, 90s after each full round. 4 rounds total.</div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Circuit Exercise</th><th>Rounds</th><th>Reps</th><th>Between</th></tr></thead>
+          <thead><tr><th style="width:46%">Circuit Exercise</th><th>Rounds</th><th>Reps</th><th>Between</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">1 — Goblet Squat to Press</div><a class="video-link" href="https://www.youtube.com/watch?v=bkXemXCLUKs" target="_blank">▶ Form Video</a></td><td>4</td><td>10</td><td>20s</td></tr>
-            <tr><td><div class="ex-name">2 — Bent-Over Row</div><a class="video-link" href="https://www.youtube.com/watch?v=vhSH7vuOp-M" target="_blank">▶ Form Video</a></td><td>4</td><td>10</td><td>20s</td></tr>
-            <tr><td><div class="ex-name">3 — Reverse Lunge (alternating)</div><a class="video-link" href="https://www.youtube.com/watch?v=GcYirgCLhnI" target="_blank">▶ Form Video</a></td><td>4</td><td>10 ea</td><td>20s</td></tr>
-            <tr><td><div class="ex-name">4 — Push-Up (full)</div><a class="video-link" href="https://www.youtube.com/watch?v=rR1efh-33AQ" target="_blank">▶ Form Video</a></td><td>4</td><td>10–12</td><td>20s</td></tr>
-            <tr><td><div class="ex-name">5 — DB Hip Thrust (heavy)</div><a class="video-link" href="https://www.youtube.com/watch?v=0kx1QOzhTCQ" target="_blank">▶ Form Video</a></td><td>4</td><td>12</td><td>90s</td></tr>
+            <tr><td>
+              <div class="ex-name">1 — Barbell Back Squat</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=f-KL4VNN96E" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>10</td><td>20s</td></tr>
+            <tr><td>
+              <div class="ex-name">2 — Barbell Bench Press</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=4Y2ZdHCOXok" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>10</td><td>20s</td></tr>
+            <tr><td>
+              <div class="ex-name">3 — Cable Seated Row</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=7BkgqzC6WsM" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>10</td><td>20s</td></tr>
+            <tr><td>
+              <div class="ex-name">4 — Barbell Hip Thrust</div>
+              <span class="equip-tag eq-bb">BB</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=pF17m_CXfL0" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>12</td><td>20s</td></tr>
+            <tr><td>
+              <div class="ex-name">5 — Push-Up (full)</div>
+              <span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=rR1efh-33AQ" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>10–12</td><td>20s</td></tr>
+            <tr><td>
+              <div class="ex-name">6 — Cable Woodchop</div>
+              <span class="equip-tag eq-cable">Cable</span>
+              <a class="vlink" href="https://www.youtube.com/watch?v=Gwcf4TOj1hc" target="_blank">▶ Form Video</a>
+            </td><td>4</td><td>10 ea</td><td>90s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (7–8 min)</strong> — Full body; take extra time, you earned it</div>
-        <div class="tip-box">This is the hardest session of the program. If you're completing 4 full rounds by Week 12, you are significantly stronger than when you started.</div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (8 min — take your time)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=D8dJ9K7SIiE" target="_blank">▶ Seated Hamstring Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=bZ-eaBPOGiM" target="_blank">▶ Doorway Chest Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=VgjgTGnBkx0" target="_blank">▶ Figure-4 Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=uNmWSg705JA" target="_blank">▶ Cross-Body Shoulder Stretch</a>
+            <a class="vlink" href="https://www.youtube.com/shorts/lyhWPzuGUHc" target="_blank">▶ Supine Spinal Twist</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=jaCOZJPSy2g" target="_blank">▶ Child's Pose</a>
+          </div>
+        </div></div>
+        <div class="tip-box">If you're completing 4 full rounds of this by Week 12, you are a fundamentally different athlete than when you started.</div>
       </div>
     </div>
 
-    <!-- P3 Day 5 -->
+    <!-- P3 D5 -->
     <div class="day-card">
       <div class="day-header" onclick="toggle(this)">
-        <div class="day-header-left">
-          <div class="day-num">5</div>
+        <div class="day-header-left"><div class="day-num">5</div>
           <div><div class="day-title">Cardio + Core</div><div class="day-meta">Saturday · ~55 min</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px"><span class="day-badge">Cardio</span><span class="chevron">⌄</span></div>
       </div>
       <div class="day-body">
-        <div class="phase-bar"><span class="pdot"></span><strong>Warm-up (5 min)</strong></div>
         <div class="cardio-block">
-          <div class="cardio-lbl">Active Recovery Walk — 30 Minutes</div>
-          <div class="cardio-desc">After Friday's circuit, this is intentional recovery. Moderate walking pace — no intervals today. This session keeps the weekly calorie burn high without stressing a body that just worked hard.</div>
+          <div class="cardio-lbl">Active Recovery Walk — 30 Min</div>
+          <div class="cardio-desc">After Friday's circuit, this is intentional recovery. Moderate walking pace, no intervals. Keep the weekly calorie burn high without stressing a body that just worked very hard.</div>
         </div>
         <table class="ex-table">
-          <thead><tr><th style="width:44%">Core Circuit</th><th>Sets</th><th>Reps/Time</th><th>Rest</th></tr></thead>
+          <thead><tr><th style="width:46%">Core Exercise</th><th>Sets</th><th>Reps/Time</th><th>Rest</th></tr></thead>
           <tbody>
-            <tr><td><div class="ex-name">Bird Dog</div><a class="video-link" href="https://www.youtube.com/watch?v=LaLKNS7mxrk" target="_blank">▶ Form Video</a></td><td>3</td><td>12 ea</td><td>30s</td></tr>
-            <tr><td><div class="ex-name">Full Plank Hold</div></td><td>3</td><td>45–60s</td><td>30s</td></tr>
-            <tr><td><div class="ex-name">Full Side Plank</div></td><td>2</td><td>35–45s ea</td><td>30s</td></tr>
-            <tr><td><div class="ex-name">Dead Bug</div><a class="video-link" href="https://www.youtube.com/watch?v=XcYtWYMz39w" target="_blank">▶ Form Video</a></td><td>2</td><td>10 ea</td><td>30s</td></tr>
+            <tr><td><div class="ex-name">Bird Dog</div><span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span><a class="vlink" href="https://www.youtube.com/watch?v=LaLKNS7mxrk" target="_blank">▶ Form Video</a></td><td>3</td><td>12 ea</td><td>30s</td></tr>
+            <tr><td><div class="ex-name">Full Plank Hold</div><span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span></td><td>3</td><td>45–60s</td><td>30s</td></tr>
+            <tr><td><div class="ex-name">Full Side Plank</div><span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span></td><td>2</td><td>35–45s ea</td><td>30s</td></tr>
+            <tr><td><div class="ex-name">Dead Bug</div><span class="equip-tag" style="background:#f5f5f5;color:#555;border:1px solid #ddd;">BW</span><a class="vlink" href="https://www.youtube.com/watch?v=XcYtWYMz39w" target="_blank">▶ Form Video</a></td><td>2</td><td>10 ea</td><td>30s</td></tr>
           </tbody>
         </table>
-        <div class="phase-bar"><span class="pdot t"></span><strong>Cool-down (8 min)</strong> — Slow, thorough, full body</div>
+        <div class="phase-row"><span class="pdot t"></span><div class="phase-row-content"><strong>Cool-down (8 min)</strong>
+          <div class="stretch-links">
+            <a class="vlink" href="https://www.youtube.com/watch?v=jaCOZJPSy2g" target="_blank">▶ Child's Pose</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=xyNwxiuERXc" target="_blank">▶ Cat-Cow</a>
+            <a class="vlink" href="https://www.youtube.com/shorts/lyhWPzuGUHc" target="_blank">▶ Supine Spinal Twist</a>
+            <a class="vlink" href="https://www.youtube.com/watch?v=VgjgTGnBkx0" target="_blank">▶ Figure-4 Stretch</a>
+          </div>
+        </div></div>
       </div>
     </div>
-  </div><!-- end phase 3 -->
+  </div><!-- end p3 -->
 
 
   <!-- PROGRESSION TABLE -->
@@ -684,14 +1081,14 @@
     <div class="section-title">What changes across 12 weeks</div>
     <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px">
       <table class="prog-table">
-        <thead><tr><th>Weeks</th><th>Sets</th><th>Cardio</th><th>Rest Between Sets</th><th>Key Focus</th></tr></thead>
+        <thead><tr><th>Weeks</th><th>Sets</th><th>Cardio</th><th>Rest</th><th>Key Focus</th></tr></thead>
         <tbody>
-          <tr><td>1–2</td><td>3 sets</td><td>20 min</td><td>75s</td><td>Learn movement patterns, light weight</td></tr>
-          <tr><td>3–4</td><td>3–4 sets</td><td>20 min</td><td>60–75s</td><td>Add weight where last 2 reps feel easy</td></tr>
-          <tr><td>5–6</td><td>4 sets (compounds)</td><td>25 min</td><td>60s</td><td>Progressive overload, longer cardio</td></tr>
-          <tr><td>7–8</td><td>4 sets</td><td>25 min</td><td>50–60s</td><td>Heavier loads, push-up progression</td></tr>
-          <tr><td>9–10</td><td>4 sets, supersets</td><td>30 min</td><td>15s / 75s (pairs)</td><td>Introduce supersets, metabolic demand</td></tr>
-          <tr><td>11–12</td><td>4 sets, circuits</td><td>30 min</td><td>20s / 90s (circuits)</td><td>Full circuit Friday, maximum capacity</td></tr>
+          <tr><td>1–2</td><td>3 sets</td><td>20 min</td><td>75s</td><td>Empty/light barbell — learn all movement patterns</td></tr>
+          <tr><td>3–4</td><td>3–4 sets</td><td>20 min</td><td>60–75s</td><td>Add weight when last 2 reps feel easy</td></tr>
+          <tr><td>5–6</td><td>4 sets (compounds)</td><td>25 min</td><td>60s</td><td>Progressive barbell overload; cable isolation added</td></tr>
+          <tr><td>7–8</td><td>4 sets</td><td>25 min</td><td>50–60s</td><td>Heavier loads; push-up progression toward full</td></tr>
+          <tr><td>9–10</td><td>4 sets, supersets</td><td>30 min</td><td>15s/75s pairs</td><td>Supersets introduced; metabolic demand spikes</td></tr>
+          <tr><td>11–12</td><td>4 sets, circuits</td><td>30 min</td><td>20s/90s circuits</td><td>Full barbell/cable circuit Friday; peak recomp</td></tr>
         </tbody>
       </table>
     </div>
@@ -705,7 +1102,7 @@
       <div class="nut-card">
         <h4>Protein Priority</h4>
         <ul>
-          <li>Target ~130–145g protein daily</li>
+          <li>Target ~130–145g protein daily (≈0.6g/lb)</li>
           <li>Chicken, eggs, Greek yogurt, cottage cheese, canned fish, lean beef</li>
           <li>Protein at every meal protects muscle while burning fat</li>
         </ul>
@@ -714,38 +1111,35 @@
         <h4>Calories</h4>
         <ul>
           <li>Modest deficit: 300–400 cal/day below maintenance</li>
-          <li>Don't skip meals on strength days — you need fuel to recover</li>
-          <li>Carbs around workouts support performance and recovery</li>
+          <li>Don't skip meals on strength days — fuel matters</li>
+          <li>Carbs around workouts help performance and recovery</li>
         </ul>
       </div>
       <div class="nut-card">
         <h4>Hydration</h4>
         <ul>
-          <li>Aim for 80–100+ oz of water daily</li>
-          <li>Add a pinch of salt or electrolytes on heavy sweat days</li>
+          <li>80–100+ oz of water daily</li>
+          <li>Pinch of salt or electrolytes on heavy training days</li>
           <li>Thirst is often mistaken for hunger — drink first</li>
         </ul>
       </div>
     </div>
-    <div class="tip-box">The scale may not move much. That's normal — and it doesn't mean the plan isn't working. Recomp shows up in how clothes fit, how strong you feel, and how much energy you have. Track those, not just the number.</div>
+    <div class="tip-box">The scale may not move much — that's normal and doesn't mean it's not working. Recomp shows in how clothes fit, how strong you feel, and how the barbell numbers move. Track all three.</div>
   </div>
 
-</div><!-- end container -->
+</div>
 
-<footer>12-Week Recomp Plan · Home Dumbbells · No Running · Built for you</footer>
+<footer>12-Week Recomp Plan · Barbell + Cable + Dumbbells · No Running · Form Videos on Everything</footer>
 
 <script>
-  function toggle(header) {
-    header.closest('.day-card').classList.toggle('open');
-  }
+  function toggle(header) { header.closest('.day-card').classList.toggle('open'); }
   function showPhase(id, tab) {
     document.querySelectorAll('.phase-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
     document.getElementById(id).classList.add('active');
     tab.classList.add('active');
-    // open first card in the phase
-    const firstCard = document.getElementById(id).querySelector('.day-card');
-    if (firstCard && !firstCard.classList.contains('open')) firstCard.classList.add('open');
+    const first = document.getElementById(id).querySelector('.day-card');
+    if (first && !first.classList.contains('open')) first.classList.add('open');
   }
 </script>
 </body>
